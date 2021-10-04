@@ -20,4 +20,4 @@ RenderMFE : This component is used to load any react mfe.
 
 ## Direction to use
 
-<RenderMFE name={unique_name} mainUrl={url} />
+`<RenderMFE name={unique_name} mainUrl={url} />`
