@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import { Button } from '@material-ui/core';
+import React, { useState } from 'react';
 import './App.css';
+import RenderMFE from './util';
+
 
 function App() {
+  const [state, setState] = useState(false);
+
+  const onclickHandler = () => {
+    setState(!state);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Button onClick={onclickHandler}>click</Button>
+      {
+        state && <RenderMFE name="employee_managemnt_ui" mainUrl="http://localhost:3002/main/main.js" />
+      }
+    </>
+  )
 }
 
 export default App;
